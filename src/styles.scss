@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* 1. Remove the default Material Dialog shadow and ensure rounded corners */
+.mat-mdc-dialog-container {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) !important; /* Subtle shadow like in the image */
+  border-radius: 8px !important; /* Match the rounded corners of the modal */
+  padding: 0 !important; /* Remove all default padding from the container */
+}
+
+/* 2. Fix inner content padding alignment */
+.mat-mdc-dialog-title {
+  padding: 24px 24px 10px 24px !important; /* Padding for the "Add New Rule" title */
+  margin: 0;
+}
+
+.mat-mdc-dialog-content {
+  padding: 0 24px !important; /* Padding for the main content area */
+}
+
+.mat-mdc-dialog-actions {
+  padding: 8px 24px 24px 24px !important; /* Padding for the bottom action buttons */
+}
+
+/* 3. Style the Radio Buttons (Ensure standard size and color) */
+.mat-mdc-radio-button {
+  --mdc-radio-disabled-selected-icon-color: #3f51b5;
+  --mdc-radio-disabled-unselected-icon-color: #333;
+  --mdc-radio-selected-focus-state-layer-color: #3f51b5;
+  --mdc-radio-selected-hover-state-layer-color: #3f51b5;
+  --mdc-radio-selected-pressed-state-layer-color: #3f51b5;
+  --mdc-radio-unselected-focus-state-layer-color: #333;
+  --mdc-radio-unselected-hover-state-layer-color: #333;
+  --mdc-radio-unselected-pressed-state-layer-color: #333;
+}
+
+:host ::ng-deep .mat-mdc-menu-content {
+  padding: 0;
+}
+
+select,
+input[type="text"] {
+  padding: 15px;
+  border: 2px solid lightsteelblue;
+  border-radius: 10px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+}
+
+.mat-mdc-header-row {
+  white-space: nowrap;
+}
