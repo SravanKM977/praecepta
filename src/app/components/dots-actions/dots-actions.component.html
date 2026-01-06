@@ -1,0 +1,12 @@
+<div class="button-container" [matMenuTriggerFor]="actionMenu">
+  <button mat-flat-button class="main-action-button" title="dots">
+    <img src="assets/images/menu-dots-vertical.svg" alt="" />
+  </button>
+</div>
+
+<mat-menu #actionMenu="matMenu">
+  <button mat-menu-item class="action-item" *ngFor="let action of actionItems">
+    <mat-icon><img [src]="action.icon" alt="{{ action.label }}" /></mat-icon>
+    <span>{{ action.label }}</span>
+  </button>
+</mat-menu>

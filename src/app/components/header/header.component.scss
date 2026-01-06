@@ -1,0 +1,45 @@
+/* Style the entire toolbar */
+.app-header-toolbar {
+  /* You can set a specific height or color if needed. */
+  /* If you want a background color, define it here: background-color: white; */
+  padding: 0 20px; /* Padding on the sides */
+  background-color: white;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Helper class to push elements to the right using flexbox */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Style the title text */
+.header-title {
+  color: #a0522d; /* Adjust this color to exactly match your 'Rule Space' text (Sienna/Brown) */
+  font-size: 1.25rem; /* Standard title size */
+  font-weight: 500;
+}
+
+/* Style the notification icon */
+.notification-icon {
+  color: #e57373; /* Light red/pink color for the bell icon */
+  margin-right: 15px; /* Space between the bell and the profile picture */
+}
+
+/* Style for the user profile image container */
+.user-profile-circle {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%; /* Makes the container perfectly circular */
+  overflow: hidden; /* Clips the image to the circle shape */
+  border: 1px solid #ff4081; /* Optional: A pink border around the image, as seen in your image */
+  background-color: #eee; /* Fallback background color */
+
+  /* If you are using an actual image: */
+  /*
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  */
+}

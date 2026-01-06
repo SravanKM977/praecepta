@@ -1,0 +1,52 @@
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  gap: 8px; /* Spacing between numbers and buttons */
+  padding: 10px 0;
+  font-family: Roboto, sans-serif;
+  margin: 0 24px 0; /* Use Material font for consistency */
+}
+
+/* Base style for Previous and Next link buttons */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #3f51b5; /* Blue link color */
+  padding: 8px 4px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.nav-link:disabled {
+  color: #b0b0b0; /* Light gray when disabled */
+  cursor: not-allowed;
+}
+
+/* Individual page number element (the clickable links) */
+.page-number-item {
+  cursor: pointer;
+  color: #3f51b5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.1s;
+}
+
+.page-number-item:hover:not(.active) {
+  background-color: #e8e8e8; /* Subtle hover effect */
+}
+
+/* Styling for the ACTIVE page (solid blue button) */
+.page-number-item.active {
+  background-color: #3f51b5; /* Primary blue color */
+  color: white; /* White text */
+  border-radius: 8px; /* Rounded corners for the active button */
+  padding: 8px 12px; /* Consistent padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

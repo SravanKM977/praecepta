@@ -1,0 +1,29 @@
+.data-info-card {
+  display: flex;
+  align-items: start;
+  font-family: Roboto, sans-serif;
+  background-color: white;
+  margin: 10px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Style for the upper, smaller, less-emphasized text */
+.label {
+  color: #757575; /* Gray color */
+  font-size: 0.8rem; /* Smaller size */
+  margin-bottom: 2px; /* Small space between the two lines */
+}
+
+/* Style for the lower, larger, bold text */
+.table-name {
+  color: #333; /* Darker text color */
+  font-size: 1.1rem; /* Slightly larger size */
+  font-weight: 500; /* Bold/semi-bold */
+}
+
+.card-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}

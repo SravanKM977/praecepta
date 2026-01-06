@@ -1,0 +1,47 @@
+<!-- <div class="logic-menu-container">
+  <button class="add-button" (click)="toggleMenu()">+ Add</button>
+
+  <div class="dropdown-menu" *ngIf="isOpen">
+    <select>
+      <button
+        *ngFor="let option of options"
+        class="menu-item"
+        (click)="selectOption(option)"
+      >
+        {{ option }}
+      </button>
+    </select>
+  </div>
+</div> -->
+
+<!-- <div class="container">
+  <button id="addButton" class="default-state" [matMenuTriggerFor]="actionMenu">
+    + Add
+  </button>
+
+  <mat-menu #actionMenu="matMenu">
+    <button mat-menu-item class="action-item" *ngFor="let action of options">
+      <span>{{ action }}</span>
+    </button>
+  </mat-menu>
+</div> -->
+
+<button mat-button [matMenuTriggerFor]="conditionMenu" class="condition-button">
+  {{ buttonText }}
+
+  <mat-icon *ngIf="selectedCondition !== 'ADD'">arrow_drop_down</mat-icon>
+</button>
+
+<mat-menu #conditionMenu="matMenu">
+  <!-- <button mat-menu-item disabled class="menu-header">+ Add</button> -->
+
+  <button
+    mat-menu-item
+    *ngFor="let option of menuOptions"
+    (click)="onSelectOption(option)"
+    [class.selected-option]="selectedCondition === option"
+    [class.disabled]="selectedCondition === 'ADD'"
+  >
+    {{ option }}
+  </button>
+</mat-menu>

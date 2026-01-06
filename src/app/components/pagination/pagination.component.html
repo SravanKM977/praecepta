@@ -1,0 +1,28 @@
+<div class="pagination-container">
+  <button
+    class="nav-link"
+    [disabled]="currentPage === 1"
+    (click)="previousPage()"
+  >
+    <mat-icon>chevron_left</mat-icon>
+    Previous
+  </button>
+
+  <div
+    *ngFor="let page of pageNumbers"
+    class="page-number-item"
+    [class.active]="page === currentPage"
+    (click)="goToPage(page)"
+  >
+    {{ page }}
+  </div>
+
+  <button
+    class="nav-link"
+    [disabled]="currentPage === totalPages"
+    (click)="nextPage()"
+  >
+    Next
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>

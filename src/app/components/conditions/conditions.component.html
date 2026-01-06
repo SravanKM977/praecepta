@@ -1,0 +1,59 @@
+<div class="conditions-container">
+  <h3 class="section-title">Conditions/Predicates</h3>
+
+  <div formArrayName="conditions">
+    <div
+      *ngFor="let conditionGroup of conditions.controls; let i = index"
+      [formGroupName]="i"
+      class="condition-row"
+    >
+      <div class="condition-field">
+        <select
+          formControlName="attribute"
+          title="attribute"
+          class="form-control select-field"
+        >
+          <option value="" disabled>Select an attribute</option>
+          <option *ngFor="let attr of attributes" [value]="attr">
+            {{ attr }}
+          </option>
+        </select>
+      </div>
+
+      <div class="condition-field">
+        <select
+          formControlName="operator"
+          title="operator"
+          class="form-control select-field"
+        >
+          <option value="" disabled>Select an operator</option>
+          <option *ngFor="let op of operators" [value]="op">{{ op }}</option>
+        </select>
+      </div>
+
+      <div class="condition-field value-input">
+        <input
+          type="text"
+          placeholder="Enter a value to compare"
+          formControlName="value"
+          class="form-control"
+        />
+      </div>
+
+      <button
+        type="button"
+        (click)="removeCondition(i)"
+        class="btn btn-delete"
+        title="Remove Condition"
+      >
+        &times;
+      </button>
+    </div>
+  </div>
+
+  <div class="add-button-row">
+    <button type="button" (click)="addCondition()" class="btn btn-add">
+      + Add
+    </button>
+  </div>
+</div>

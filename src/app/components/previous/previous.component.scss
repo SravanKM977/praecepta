@@ -1,0 +1,36 @@
+.prev-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #6c757d;
+  border: none;
+  border-radius: 30px;
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(108, 117, 125, 0.3);
+}
+
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1); /* ensures the icon appears white */
+  transition: transform 0.3s ease;
+}
+
+.prev-btn:hover {
+  background-color: #545b62;
+  box-shadow: 0 5px 12px rgba(84, 91, 98, 0.4);
+}
+
+.prev-btn:hover .arrow-icon {
+  transform: translateX(-5px);
+}
+
+.prev-btn:active {
+  transform: scale(0.97);
+}

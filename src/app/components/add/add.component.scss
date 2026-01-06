@@ -1,0 +1,137 @@
+// .logic-menu-container {
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+// }
+
+// // .add-button {
+// //   /* Style for the "+ Add" button */
+// //   padding: 8px 12px;
+// //   border: 1px solid #cceeff; // Light blue border for soft appearance
+// //   border-radius: 4px;
+// //   background-color: #f0f8ff; // Very light blue background
+// //   color: #3f51b5; // Primary blue text color
+// //   cursor: pointer;
+// //   font-weight: 500;
+// //   transition: background-color 0.2s;
+
+// //   &:hover {
+// //     background-color: #e6f3ff;
+// //   }
+// // }
+
+// .add-button {
+//   background-color: lavender;
+//   color: black;
+//   border: 1px solid lightblue;
+//   padding: 8px 20px;
+//   border-radius: 10px;
+//   cursor: pointer;
+//   font-size: 14px;
+//   transition: background-color 0.3s;
+//   display: block;
+//   margin: 10px auto 0;
+
+//   &:hover {
+//     background-color: #e6f3ff;
+//   }
+// }
+
+// .dropdown-menu {
+//   /* The menu panel itself */
+//   position: absolute;
+//   top: 100%; // Position directly below the button
+//   left: 0;
+//   z-index: 10; // Ensure it appears on top of other elements
+//   width: 100%; // Match the width of the button
+//   min-width: 80px;
+//   margin-top: -1px; // Optional: Adjust to visually touch the button border
+
+//   border: 1px solid #ddd;
+//   border-radius: 0 0 4px 4px; // Rounded corners only on the bottom
+//   background-color: white;
+//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//   overflow: hidden;
+// }
+
+// .menu-item {
+//   /* Style for individual AND/OR options */
+//   width: 100%;
+//   padding: 8px 12px;
+//   text-align: center;
+//   border: none;
+//   background-color: transparent;
+//   cursor: pointer;
+//   font-size: 14px;
+//   font-weight: 600;
+//   color: #333;
+//   transition: background-color 0.2s;
+
+//   // Highlight effect shown in the image (light blue background on hover/focus)
+//   &:hover,
+//   &:focus {
+//     background-color: #e0f0ff;
+//     outline: none;
+//   }
+// }
+
+// 2)
+// .hidden {
+//   display: none; /* Used to toggle visibility */
+// }
+
+// .default-state,
+// .menu-state {
+//   /* Styles matching the images for the buttons/menu */
+//   border: 1px solid #ccc;
+//   border-radius: 6px;
+//   padding: 8px 12px;
+// }
+
+// .menu-state {
+//   /* Stack the options */
+//   display: flex;
+//   flex-direction: column;
+//   /* More specific styling for the menu items to match the visual */
+// }
+
+// .menu-item.selected {
+//   background-color: #d0e0ff; /* Light blue/purple highlight */
+// }
+
+// 3)
+/* Style the button container to look like your image_72e377.png */
+.condition-button {
+  background-color: lavender;
+  color: black;
+  border: 1px solid lightblue;
+  padding: 8px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  display: flex;
+  margin: 10px auto 0;
+  align-items: center;
+}
+
+/* Style the menu options for a clear look */
+.mat-menu-item {
+  /* Set a fixed height for consistent look */
+  height: 32px;
+}
+
+/* Style for the non-selectable + Add header in the menu */
+.menu-header {
+  color: #888;
+  font-weight: 600;
+  /* Remove hover effect for this disabled header */
+  pointer-events: none;
+}
+
+/* Highlight the currently selected option in the dropdown menu */
+.selected-option {
+  /* Light blue background to match the visual in image_72e6db.png */
+  background-color: #e0f2ff;
+  color: #1a73e8; /* Blue text for selection */
+}

@@ -1,0 +1,142 @@
+.dialog-content {
+  padding-top: 10px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -10px;
+}
+
+.pop-up-header {
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #eaeaea;
+  padding: 0 20px;
+  width: inherit;
+  vertical-align: middle;
+
+  .pop-up-title {
+    font-size: 16px;
+    font-weight: 400;
+    margin: auto 0;
+    text-align: start;
+  }
+}
+
+// /* Style the content area */
+.mat-dialog-content {
+  padding: 0 24px 20px 24px !important;
+}
+
+.upload-box {
+  border: 2px dashed #c2c9d6;
+  padding: 10px;
+  text-align: center;
+  margin: 15px auto 0;
+  background-color: #fafbff;
+  width: 85%;
+}
+
+.upload-box-disabled {
+  border: 2px dashed #c2c9d6;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 15px;
+  background-color: #fafbff;
+}
+
+.upload-area img {
+  width: auto;
+  height: 30px;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.file-name {
+  margin-top: 10px;
+  color: #4a4a4a;
+  font-weight: 500;
+}
+
+img {
+  width: auto;
+  height: 30px;
+}
+
+.action-buttons-container {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding: 16px 40px;
+}
+
+/* Buttons Base */
+.btn {
+  padding: 8px 20px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  width: auto;
+  text-align: center;
+}
+
+.btn.select-btn {
+  padding: 4px 10px;
+}
+
+/* White background + blue border */
+.btn-outline {
+  background-color: #fff;
+  border: 1.5px solid #1976d2;
+  color: #1976d2;
+}
+
+.btn-outline:hover {
+  background-color: #e3f2fd;
+}
+
+/* Blue background + white text */
+.btn-primary {
+  background-color: #1976d2;
+  color: #ffffff;
+  border: 1.5px solid #1976d2;
+}
+
+.btn-primary:hover {
+  background-color: #1565c0;
+}
+
+.btn-primary:disabled {
+  background-color: gray;
+  cursor: default;
+  pointer-events: none;
+  border: none;
+}
+
+.mat-icon {
+  cursor: pointer;
+  margin: auto 2px;
+}
+
+/* ✅ Responsive layout: stack vertically on smaller screens */
+@media (max-width: 600px) {
+  .action-buttons-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,11 @@
+<mat-nav-list>
+  <a
+    mat-list-item
+    *ngFor="let item of menuItems"
+    [class.active]="item.active"
+    (click)="onClickNavItem(item.path)"
+  >
+    <img [src]="item.icon" alt="{{ item.label }}" class="menu-icon" />
+    {{ item.label }}
+  </a>
+</mat-nav-list>

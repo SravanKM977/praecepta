@@ -1,0 +1,90 @@
+<app-rule-info></app-rule-info>
+
+<div class="table-with-new-rule-button">
+  <a
+    mat-stroked-button
+    color="primary"
+    class="new-rule-button"
+    (click)="openAddRuleDialog()"
+  >
+    <img src="assets/images/newRule.svg" alt="plus" class="menu-icon" />
+    New Rule
+  </a>
+
+  <mat-card class="table-container">
+    <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z1">
+      <!-- Serial Column -->
+      <ng-container matColumnDef="serial">
+        <th mat-header-cell *matHeaderCellDef>SL No.</th>
+        <td mat-cell *matCellDef="let group">
+          <a class="link">{{ group.serial }}</a>
+        </td>
+      </ng-container>
+
+      <!-- Rule Group Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Rule Group</th>
+        <td mat-cell *matCellDef="let group">
+          <a class="link" (click)="createRule(group)">{{ group.name }}</a>
+        </td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+        <td mat-cell *matCellDef="let group">
+          <span [ngClass]="group.status.toLowerCase()">{{ group.status }}</span>
+        </td>
+      </ng-container>
+
+      <!-- Version Column -->
+      <ng-container matColumnDef="version">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Version</th>
+        <td mat-cell *matCellDef="let group">{{ group.version }}</td>
+      </ng-container>
+
+      <!-- Last Updated Column -->
+      <ng-container matColumnDef="lastUpdated">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Updated</th>
+        <td mat-cell *matCellDef="let group">
+          {{ group.lastUpdated | dateTime }}
+        </td>
+      </ng-container>
+
+      <!-- Updated By Column -->
+      <ng-container matColumnDef="updatedBy">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Updated By</th>
+        <td mat-cell *matCellDef="let group">
+          {{ group.updatedBy }}
+        </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let group">
+          <app-actions></app-actions>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </mat-card>
+
+  <app-pagination
+    [items]="totalItems"
+    (pageChange)="onPageChanged($event)"
+  ></app-pagination>
+  <!-- <mat-paginator
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+  ></mat-paginator> -->
+
+  <ul>
+    <li *ngFor="let item of visibleItems">
+      {{ item }}
+    </li>
+  </ul>
+</div>

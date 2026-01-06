@@ -1,0 +1,16 @@
+<div class="split-button-container" [matMenuTriggerFor]="actionMenu">
+  <button mat-flat-button class="main-action-button">Actions</button>
+
+  <span class="vertical-divider"></span>
+
+  <button mat-icon-button class="dropdown-arrow-button">
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+</div>
+
+<mat-menu #actionMenu="matMenu">
+  <button mat-menu-item class="action-item" *ngFor="let action of actionItems">
+    <mat-icon><img [src]="action.icon" alt="{{ action.label }}" /></mat-icon>
+    <span>{{ action.label }}</span>
+  </button>
+</mat-menu>

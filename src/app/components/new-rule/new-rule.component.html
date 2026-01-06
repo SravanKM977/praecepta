@@ -1,0 +1,82 @@
+<app-rule-info></app-rule-info>
+
+<form [formGroup]="ruleForm" (ngSubmit)="onSubmit()" class="rule-form">
+  <div class="form-row">
+    <div class="form-group large-field">
+      <label for="ruleName">Rule Name</label>
+      <input
+        id="ruleName"
+        type="text"
+        placeholder="Enter a unique rule name"
+        formControlName="ruleName"
+        class="form-control"
+      />
+      <div
+        *ngIf="
+          f['ruleName'].invalid &&
+          (f['ruleName'].dirty || f['ruleName'].touched)
+        "
+        class="error-message"
+      >
+        <span *ngIf="f['ruleName'].errors?.['required']"
+          >Rule Name is required.</span
+        >
+        <span *ngIf="f['ruleName'].errors?.['maxlength']"
+          >Max 50 characters allowed.</span
+        >
+      </div>
+    </div>
+
+    <div class="form-group small-field">
+      <label for="rulePriority">Rule Priority</label>
+      <input
+        id="rulePriority"
+        type="number"
+        placeholder="Enter the rule priority"
+        formControlName="rulePriority"
+        class="form-control"
+      />
+      <div
+        *ngIf="
+          f['rulePriority'].invalid &&
+          (f['rulePriority'].dirty || f['rulePriority'].touched)
+        "
+        class="error-message"
+      >
+        <span *ngIf="f['rulePriority'].errors?.['required']"
+          >Priority is required.</span
+        >
+        <span
+          *ngIf="f['rulePriority'].errors?.['min'] || f['rulePriority'].errors?.['max']"
+          >Priority must be between 1 and 1000.</span
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea
+      id="description"
+      placeholder="Enter the description"
+      formControlName="description"
+      rows="4"
+      class="form-control"
+    ></textarea>
+    <div
+      *ngIf="f['description'].errors?.['maxlength'] && f['description'].touched"
+      class="error-message"
+    >
+      Max 255 characters allowed.
+    </div>
+  </div>
+
+  <app-rule-builder></app-rule-builder>
+  <app-access-buttons
+    (clearForm)="onClear($event)"
+    (downloadForm)="downloadRuleJSON()"
+    (runForm)="runRule()"
+    (saveForm)="saveRule()"
+  ></app-access-buttons>
+  <!-- <app-conditions [ruleForm]="ruleForm"></app-conditions> -->
+</form>

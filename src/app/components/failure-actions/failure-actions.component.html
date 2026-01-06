@@ -1,0 +1,47 @@
+<div class="conditions-container" id="conditionsContainer1">
+  <div class="conditions-title">🔴 Failure Actions</div>
+
+  <div
+    class="condition-row"
+    id="conditionRow0"
+    *ngFor="let action of successActions; let i = index"
+  >
+    <div class="condition-col">
+      <label>Attribute</label>
+      <div class="select-with-icon">
+        <select class="attribute-select" title="attribute">
+          <option value="" disabled selected>Select an attribute</option>
+          <option *ngFor="let attr of attributes">
+            {{ attr }}
+          </option>
+        </select>
+        <label></label>
+        <button
+          mat-icon-button
+          class="remove-condition-btn"
+          [disabled]="attributes.length === 1"
+          [ngClass]="{ 'delete-disabled': attributes.length === 1 }"
+          (click)="removeAction(i)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="condition-col">
+      <label>Value</label>
+      <div class="select-with-icon">
+        <input
+          type="text"
+          placeholder="Enter a value to compare"
+          class="value-input"
+        />
+      </div>
+    </div>
+
+    <div class="add-condition-row">
+      <button class="add-condition-btn" (click)="addAction()">+ Add</button>
+      <app-add></app-add>
+    </div>
+  </div>
+</div>

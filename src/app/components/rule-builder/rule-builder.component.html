@@ -1,0 +1,118 @@
+<div class="rule-builder-container">
+  <header class="rule-header">
+    <span>Rule</span>
+    you can build Simple, Multi and Multi Nested rules.
+  </header>
+  <ng-container *ngFor="let set of conditionSet; let j = index">
+    <header class="rule-header"></header>
+    <div class="condition-set" id="conditionSet1">
+      <div class="condition-set-header">
+        <div class="condition-header">
+          <img src="assets/images/condition.svg" alt="" />
+          <span> Condition Set {{ j + 1 }} </span>
+        </div>
+
+        <div class="conditions-button-container">
+          <ng-container>
+            <app-dots-actions></app-dots-actions>
+          </ng-container>
+
+          <ng-container>
+            <button
+              class="remove-set-btn"
+              (click)="removeConditionSet(j)"
+              title="minus"
+            >
+              −
+            </button>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="conditions-container" id="conditionsContainer1">
+        <div class="conditions-title">Conditions/Predicates</div>
+
+        <div
+          class="condition-row"
+          id="conditionRow0"
+          *ngFor="let cp of conditionsPredicates; let i = index"
+        >
+          <div class="condition-col">
+            <label>Attribute</label>
+            <select
+              class="attribute-select"
+              title="attribute"
+              [(ngModel)]="cp.attribute"
+            >
+              <option value="" disabled selected>Select an attribute</option>
+              <option *ngFor="let attr of attributes" [value]="attr">
+                {{ attr }}
+              </option>
+            </select>
+          </div>
+          <div class="condition-col">
+            <label>Conditional Operator</label>
+            <select
+              class="operator-select"
+              title="operator"
+              [(ngModel)]="cp.operator"
+            >
+              <option value="" disabled selected>Select an operator</option>
+              <option *ngFor="let operator of operators" [value]="operator">
+                {{ operator }}
+              </option>
+            </select>
+          </div>
+          <div class="condition-col">
+            <label>Value</label>
+            <input
+              type="text"
+              placeholder="Enter a value to compare"
+              [(ngModel)]="cp.value"
+              class="value-input"
+            />
+          </div>
+          <div class="condition-col trash-col">
+            <label></label>
+            <button
+              mat-icon-button
+              [disabled]="i === 0"
+              (click)="removeConditionPredicate(i)"
+              title="delete"
+              [ngClass]="{ 'delete-disabled': i === 0 }"
+              matTooltip="{{
+                i === 0
+                  ? 'Cannot delete the first condition'
+                  : 'Delete condition'
+              }}"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="add-condition-row">
+          <button
+            class="add-condition-btn"
+            (click)="addConditionPredicate()"
+            title="add"
+          >
+            + Add
+          </button>
+        </div>
+      </div>
+
+      <div class="conditions-actions-container">
+        <app-success-actions></app-success-actions>
+        <app-failure-actions></app-failure-actions>
+      </div>
+    </div>
+
+    <div class="add-condition-row">
+      <button class="add-condition-btn" (click)="addConditionSet()" title="add">
+        + Add
+      </button>
+      <app-add (click)="addConditionSet()"></app-add>
+    </div>
+  </ng-container>
+</div>

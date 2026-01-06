@@ -1,0 +1,57 @@
+<div class="header">
+  <h1>North America Retail Banking</h1>
+</div>
+
+<div class="table-with-new-rule-button">
+  <a mat-stroked-button color="primary" class="new-rule-button">
+    <img src="assets/images/newRule.svg" alt="plus" class="menu-icon" /> New
+    Rule Group
+  </a>
+
+  <mat-card class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z1">
+      <!-- Rule Group Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Rule Group</th>
+        <td mat-cell *matCellDef="let group">
+          <a class="link" (click)="goToRule(group)">{{ group.name }}</a>
+        </td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+        <td mat-cell *matCellDef="let group">
+          <span [ngClass]="group.status.toLowerCase()">{{ group.status }}</span>
+        </td>
+      </ng-container>
+
+      <!-- Version Column -->
+      <ng-container matColumnDef="version">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Version</th>
+        <td mat-cell *matCellDef="let group">{{ group.version }}</td>
+      </ng-container>
+
+      <!-- Last Updated Column -->
+      <ng-container matColumnDef="lastUpdated">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Updated</th>
+        <td mat-cell *matCellDef="let group">
+          {{ group.lastUpdated | dateTime }}
+        </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let group">
+          <app-actions></app-actions>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </mat-card>
+
+  <app-pagination [items]="totalItems"></app-pagination>
+</div>

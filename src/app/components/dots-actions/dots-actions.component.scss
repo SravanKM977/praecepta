@@ -1,0 +1,111 @@
+img {
+  height: 20px;
+  width: 20px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.action-item {
+  border-top: 1px solid #eaeaea;
+  background-color: #ffffff;
+  min-height: 30px;
+  color: #3f51b5;
+}
+
+/* Container to group the two buttons and the divider */
+.button-container {
+  display: flex;
+  align-items: center;
+  // border: 1px solid #7986cb; /* Border color from your image */
+  border-radius: 10px; /* Rounded corners for the whole group */
+  overflow: hidden; /* Ensures internal elements don't break rounded corners */
+  width: fit-content; /* Make the container only as wide as its content */
+  height: 30px; /* Consistent height, adjust if your mat-buttons default differently */
+  background-color: transparent; /* Ensure background is transparent if needed */
+}
+
+/* Style for the main "Actions" button */
+.main-action-button {
+  height: 100%;
+  border-radius: 0;
+  padding: 0 15px;
+  background-color: transparent;
+  color: #3f51b5;
+  font-weight: 500;
+  line-height: 1;
+  width: 70%;
+  border: none;
+  cursor: pointer;
+}
+
+.main-action-button:not(:disabled),
+.main-action-button:not(:disabled) {
+  color: #3f51b5;
+  background-color: transparent !important; /* Keep backgrounds clear */
+}
+
+/* The vertical divider between the two button parts */
+.vertical-divider {
+  width: 2px; /* Thickness of the divider */
+  background-color: #7986cb; /* Color of the divider, matching the border */
+  height: 100%; /* Shorter than full height to create visual separation */
+  opacity: 1; /* Slightly less opaque than the border */
+  margin: 0 2px; /* Small space around the divider */
+}
+
+/* Style for the dropdown arrow button */
+.dropdown-arrow-button {
+  height: 100%; /* Take full height */
+  width: 25px; /* Fixed width for the icon button */
+  min-width: 25px; /* Ensure it doesn't shrink */
+  border-radius: 0; /* Remove individual button rounding */
+  background-color: transparent; /* Match the background of the container */
+  color: #3f51b5; /* Icon color from your image */
+  padding: 0; /* Remove default padding from mat-icon-button */
+  line-height: 1; /* Adjust line-height for vertical alignment */
+  width: 20%;
+
+  .mat-icon:hover,
+  .mat-icon:focus,
+  .mat-icon:focus-within {
+    background-color: inherit;
+  }
+}
+
+/* Override default mat-button focus/hover backgrounds if they interfere */
+.mat-flat-button:not(:disabled),
+.mat-icon-button:not(:disabled) {
+  background-color: transparent !important; /* Keep backgrounds clear */
+}
+
+/* Optional: Add hover/focus styles if desired */
+.split-button-container:hover {
+  // background-color: rgba(0, 0, 0, 0.04); /* Subtle background on hover */
+  background-color: transparent !important;
+}
+
+.dropdown-arrow-button:hover {
+  background-color: transparent !important; /* Subtle background on hover */
+}
+
+/* Optional: Make menu icons align nicely (may need ::ng-deep if using older Angular versions) */
+.mat-menu-item {
+  background-color: white;
+}
+
+.mat-menu-item mat-icon {
+  margin-right: 8px;
+  color: #333; /* Default icon color */
+}
+
+.mat-icon:hover {
+  background-color: none;
+}
+
+:host ::ng-deep .mat-mdc-menu-content {
+  padding: 0;
+}

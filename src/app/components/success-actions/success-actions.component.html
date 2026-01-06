@@ -1,0 +1,44 @@
+<div class="conditions-container" id="conditionsContainer1">
+  <div class="conditions-title">🟢 Success Actions</div>
+
+  <div
+    class="condition-row"
+    id="conditionRow0"
+    *ngFor="let action of successActions; let i = index"
+  >
+    <div class="condition-col">
+      <label for="attribute">Attribute</label>
+      <div class="select-with-icon">
+        <select
+          class="attribute-select"
+          title="attribute"
+          [(ngModel)]="action.attribute"
+        >
+          <option value="" disabled selected>Select an attribute</option>
+          <option *ngFor="let attr of attributes" [value]="attr">
+            {{ attr }}
+          </option>
+        </select>
+
+        <label></label>
+        <button class="remove-condition-btn" (click)="removeAction(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="condition-col">
+      <label>Value</label>
+      <input
+        type="text"
+        placeholder="Enter a value to compare"
+        class="value-input"
+        [(ngModel)]="action.value"
+      />
+    </div>
+
+    <div class="add-condition-row">
+      <button class="add-condition-btn" (click)="addAction()">+ Add</button>
+    </div>
+  </div>
+</div>

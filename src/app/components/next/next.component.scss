@@ -1,0 +1,36 @@
+.next-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
+}
+
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1); /* makes dark SVG white */
+  transition: transform 0.3s ease;
+}
+
+.next-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 5px 12px rgba(0, 86, 179, 0.4);
+}
+
+.next-btn:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+.next-btn:active {
+  transform: scale(0.97);
+}

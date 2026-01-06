@@ -1,0 +1,171 @@
+.rule-builder-container {
+  font-family: Arial, sans-serif;
+  margin: 40px auto;
+}
+
+.rule-header {
+  display: flex;
+  font-size: 16px;
+  margin-bottom: 20px;
+  justify-content: start;
+  font-style: italic;
+
+  span {
+    font-size: 26px;
+    font-weight: 600;
+    margin-right: 10px;
+    font-style: normal;
+  }
+}
+
+.condition-set {
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+
+.condition-set-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  background-color: #e8e8e8;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+
+  .condition-header {
+    align-items: center;
+
+    img {
+      height: auto;
+      width: 20px;
+    }
+  }
+}
+
+.conditions-container {
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid gray;
+  border-radius: 25px;
+  margin: 20px;
+}
+
+.conditions-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.condition-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  // margin-bottom: 15px;
+  padding: 10px 0;
+}
+
+.condition-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.condition-col label {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+/* Style for inputs and selects */
+select,
+input[type="text"] {
+  padding: 15px;
+  border: 2px solid lightsteelblue;
+  border-radius: 10px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Styles for buttons */
+.add-condition-btn {
+  background-color: lavender;
+  color: black;
+  border: 1px solid lightblue;
+  padding: 8px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 10px auto 0;
+}
+
+.remove-set-btn,
+.remove-condition-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #888;
+  line-height: 1;
+}
+
+.remove-set-btn {
+  padding: 3px 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: darkgray;
+  color: #ffffff;
+}
+
+.trash-col {
+  flex: 0 0 40px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.conditions-actions-container {
+  display: flex;
+  justify-content: space-between;
+
+  app-success-actions,
+  app-failure-actions {
+    width: -webkit-fill-available;
+  }
+}
+
+.conditions-button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: self-end;
+
+  .three-dots-container {
+    margin-right: 10px;
+
+    .three-dots {
+      border: none;
+      background: none;
+
+      img {
+        height: 15px;
+        width: 15px;
+        background: none;
+      }
+    }
+  }
+
+  button.mat-icon-button mat-icon {
+    color: #e53935;
+  }
+
+  /* Greyed-out delete icon for single row */
+  .delete-disabled mat-icon {
+    color: red !important;
+  }
+}

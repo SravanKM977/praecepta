@@ -1,0 +1,51 @@
+<div class="pop-up-header">
+  <h4 mat-dialog-title class="pop-up-title">Add New Rule</h4>
+  <mat-icon (click)="close()">close</mat-icon>
+</div>
+
+<mat-dialog-content class="dialog-content">
+  <mat-radio-group [(ngModel)]="mode" class="radio-group">
+    <mat-radio-button value="manual">Manually</mat-radio-button>
+    <mat-radio-button value="import">Import JSON file</mat-radio-button>
+  </mat-radio-group>
+
+  <div
+    class="upload-box"
+    (drop)="handleDrop($event)"
+    (dragover)="allowDrop($event)"
+  >
+    <div class="upload-area" [class.disabled]="mode !== 'import'">
+      <mat-icon>upload</mat-icon>
+      <p>Drag and drop file here or</p>
+      <button
+        mat-stroked-button
+        class="btn select-btn"
+        (click)="fileInput.click()"
+        [disabled]="mode !== 'import'"
+      >
+        Select File
+      </button>
+      <input
+        type="file"
+        title="file"
+        #fileInput
+        style="display: none"
+        accept=".json"
+        (change)="handleFileSelect($event)"
+      />
+    </div>
+
+    <p *ngIf="fileName" class="file-name">Selected: {{ fileName }}</p>
+  </div>
+</mat-dialog-content>
+
+<div class="action-buttons-container">
+  <button class="btn btn-outline" (click)="close()">Cancel</button>
+  <button
+    class="btn btn-primary"
+    (click)="submit()"
+    [disabled]="mode === 'import' && !fileContent"
+  >
+    Add
+  </button>
+</div>
